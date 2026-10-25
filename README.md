@@ -279,6 +279,29 @@ Ideal for AI applications (chatbots, research assistants, content generation), S
 
 ---
 
+## **[Firecrawl](https://www.firecrawl.dev/?utm_source=search-api-tools&utm_medium=integration)**
+
+Search plus clean page content in one call, built for AI agents and LLM pipelines.
+
+![Firecrawl Screenshot](image/firecrawl.webp)
+
+
+Firecrawl comes at search data from the AI side. Its `/search` endpoint returns titles, descriptions, and URLs for web results, and the same call can also return the full content of each result page as markdown. For agents and RAG pipelines that removes the usual second step of fetching and cleaning every URL yourself.
+
+A `sources` parameter widens a request beyond web results: ask for `web`, `news`, and `images` in one call, with the `limit` applied to each source type. A `categories` parameter narrows the search to academic research, PDFs, developer sources such as issues, merged pull requests, and READMEs, or government publications, and `includeDomains` or `excludeDomains` keeps results on (or off) specific sites.
+
+Adding `scrapeOptions` turns a search into search plus extraction. Pick markdown, HTML, links, or screenshots, and each result comes back with its page content next to the usual fields. That makes it a natural fit for research assistants and chat tools that need readable source text, not just links.
+
+The integration surface is broad. There is an official MCP server (`firecrawl-mcp`) with a hosted endpoint, a CLI (`firecrawl search "your query" --limit 5`), and SDKs for Python, Node.js, Go, Java, Ruby, Rust, .NET, PHP, and Elixir. It also plugs into LangChain, LlamaIndex, the Vercel AI SDK, Mastra, Langflow, Flowise, n8n, Zapier, Make, Pipedream, and Composio, and into coding agents such as Cursor, Windsurf, and OpenCode over MCP.
+
+Authentication is a bearer API key, and a free account gives you one without a card. Pricing is credit-based and shared across search, scrape, and crawl: a search costs 2 credits per 10 results, and each page you scrape adds at least 1 credit (options such as JSON extraction add more). The Free plan includes 1,000 credits per month (about 500 searches, with a 10 requests per minute limit on `/search`). Hobby is $19/month for about 2,500 searches, Standard is $99/month for about 50,000, Growth is $399/month for about 250,000, and Scale is $749/month for about 500,000. That works out to roughly $1.50 to $7.60 per 1,000 plain searches at monthly pricing, depending on the plan. Paid plans can add pay-as-you-go credits when the monthly allowance runs out.
+
+Firecrawl is not a multi-engine SERP product. It returns web, news, and image results rather than a catalog of search engines and verticals such as Maps, Shopping, or Jobs, and it does not break a results page down into ads, knowledge graphs, and People Also Ask blocks the way rank trackers expect. If you need per-engine SERP parsing for SEO monitoring, a dedicated SERP API is the better fit.
+
+Firecrawl works best for AI agents, RAG pipelines, research assistants, and any workflow where the goal is getting search results and readable page content from a single API call, with the same account also covering scraping, crawling, and site mapping.
+
+---
+
 ## FAQ
 
 **Which search API offers the fastest response times?**
